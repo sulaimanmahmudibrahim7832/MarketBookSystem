@@ -2,9 +2,9 @@ let drawerHTML = '';
 const aside = document.getElementById("menuDrawer");
 const header = document.querySelector(".header");
 const user ={
-    name: "Sulaiman Mahmud Ibrahim",
-    accountType: "individual",
-    avater:"SM"
+    name: "Tahir Abdulkadir Dan Wawu",
+    accountType: "Retailer",
+    avater:"TD"
 }
 let headerHTML = `
      <div class="header-left">
@@ -35,52 +35,32 @@ let headerHTML = `
              <div class="quick-menu">
              
              
-             
+              
              
                  <div
                      class="quick-menu-content"
                      id="quickMenuContent">
-             
-             
                      <div class="quick-menu-header">
                          <strong>Quick Settings</strong>
-                     </div>
-                 
-                 
-                 
-                 
+                     </div>                 
                      <a href="../../frontend/pages/profile.html" class="quick-menu-item">
                          <span>👤</span>
                          <span>Profile</span>
                      </a>
-                 
-                 
-                 
-                 
                      <a href="../../frontend/pages/acccount.html" class="quick-menu-item">
                          <span>⚙</span>
                          <span>Account</span>
                      </a>
-                 
-                 
-                 
-                 
                      <a href="../../frontend/pages/setting.html" class="quick-menu-item">
                          <span>☷</span>
                          <span>System Settings</span>
                      </a>
-                 
                   <a href="../../frontend/pages/feedback.html" class="quick-menu-item">
                          <span>🗨️</span>
                          <span>Feedback</span>
                      </a>
-                 
-                 
-                     <div class="quick-menu-divider"></div>
-                 
-                 
-                 
-                 
+                     <div class="quick-menu-divider">
+                     </div>
                      <button
                          type="button"
                          class="quick-menu-item sign-out"

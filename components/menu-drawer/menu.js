@@ -52,14 +52,8 @@
 
 
         function closeDrawer() {
-
-
             menuDrawer.classList.remove("open");
-
-
             drawerOverlay.classList.remove("show");
-
-
         }
 
 
@@ -68,18 +62,10 @@
         // Close drawer with Escape key
 
 
-        document.addEventListener("keydown",  event=> {
-
-
+        document.addEventListener("keydown",event=> {
             if (event.key === "Escape") {
-
-
                 closeDrawer();
-
-
             }
-
-
         });
 
 
@@ -92,49 +78,53 @@ const menuItems = document.querySelectorAll(".menu-item");
 menuItems[0].classList.remove("active");
 menuItems.forEach(item => {
             item.addEventListener("click",  ()=> {
-               
                 if (window.innerWidth < 900) {
-
-
                     closeDrawer();
-
-
                 }
-             
-             
-             
-             
-
             });
 
 
-        });
+});
+        
 
-// active page / activation 
-const currentPage = window.location.pathname.split("/").pop();
-//console.log(currentPage);
-const drawerLinks = document.querySelectorAll("aside a");
+function link_tabs (drawerContainer) {
+    const currentPage = window.location.pathname.split("/").pop();
+const drawerLinks = document.querySelectorAll(`${drawerContainer} a`);
 drawerLinks.forEach(link => {
     const linkedPage = link.getAttribute("href").split("/").pop();
+
     if (currentPage === linkedPage) {
-         link.classList.add("active");
-     }
+        link.classList.add("active");
+         console.log(linkedPage);
+    }
+   
 });
+}
+link_tabs('aside')
+link_tabs('.quick-menu-content')
+const container = document.querySelectorAll(".quick-menu-content a");
+container.forEach(a => {
+    console.log(a.classList.contains("active"));
+})
+//console.log("")
+// active page / activation 
+
+
+
+
+
+
+
+
+
         // Example sign-out action
 
 
         const signOut =  document.getElementById("signOut");
-
-
-
-
         signOut.addEventListener("click",  ()=> {
-
-
             alert("Sign out action will be connected later.");
-
-
         });
+    
 
 
 

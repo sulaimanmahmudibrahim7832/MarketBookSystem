@@ -311,12 +311,12 @@
         }
 
 
-        .menu-item.active {
-            background: #2474ff;
-            color: white;
-        }
 
-
+.active{
+   background: #2474ff !important;
+ color: white !important;  
+ z-index:1300;
+}
         .menu-icon {
             width: 24px;
 
