@@ -3,10 +3,7 @@
 This represents the account that will later be created through the backend/database. ========================= */
 let registeredUser = null;
 /* ========================= ELEMENTS ========================= */
-const signupForm =
-document.getElementById(
-    "signupForm"
-);
+const signupForm =document.getElementById("signupForm");
 
 const formMessage =
 document.getElementById(

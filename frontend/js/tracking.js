@@ -1,209 +1,32 @@
-/* =========================
-TEMPORARY MOVEMENT DATA
-
-
-Later this data will come
-from Import and Export
-records in the backend.
-========================= */
-
-
-const movementRecords = [
-
-
-{
-    productId: "PRD-001",
-    productName: "Nike Air Max 270",
-    dailyImport: 20,
-    dailyExport: 8,
-    weeklyImport: 75,
-    weeklyExport: 31,
-    monthlyImport: 240,
-    monthlyExport: 112
-},
-
-
-
-
-{
-    productId: "PRD-003",
-    productName: "Canvas Shoe",
-
-
-    dailyImport: 15,
-    dailyExport: 5,
-
-
-    weeklyImport: 60,
-    weeklyExport: 22,
-
-
-    monthlyImport: 180,
-    monthlyExport: 91
-},
-
-
-
-
-{
-    productId: "PRD-005",
-    productName: "Men's Leather Shoe",
-
-
-    dailyImport: 10,
-    dailyExport: 3,
-
-
-    weeklyImport: 45,
-    weeklyExport: 17,
-
-
-    monthlyImport: 150,
-    monthlyExport: 68
-}
-
-
-];
-
-
+import { movementRecords } from "../assests/data/tracking-data.js";
 /* =========================
 ELEMENTS
 ========================= */
 
 
-const periodButtons =
-
-
-document.querySelectorAll(
-    ".period-button"
-);
-
-
-const totalMovement =
-
-
-document.getElementById(
-    "totalMovement"
-);
-
-
-const importedQuantity =
-
-
-document.getElementById(
-    "importedQuantity"
-);
-
-
-const exportedQuantity =
-
-
-document.getElementById(
-    "exportedQuantity"
-);
-
-
-const netMovement =
-
-
-document.getElementById(
-    "netMovement"
-);
-
-
-const importBar =
-
-
-document.getElementById(
-    "importBar"
-);
-
-
-const exportBar =
-
-
-document.getElementById(
-    "exportBar"
-);
-
-
-const importBarValue =
-
-
-document.getElementById(
-    "importBarValue"
-);
-
-
-const exportBarValue =
-
-
-document.getElementById(
-    "exportBarValue"
-);
-
-
-const chartDescription =
-
-
-document.getElementById(
-    "chartDescription"
-);
-
-
-const movementRecordCount =
-
-
-document.getElementById(
-    "movementRecordCount"
-);
-
-
-const movementTableBody =
-
-
-document.getElementById(
-    "movementTableBody"
-);
-
-
-const mobileMovementList =
-
-
-document.getElementById(
-    "mobileMovementList"
-);
-
-
+const periodButtons =document.querySelectorAll( ".period-button");
+const totalMovement = document.getElementById("totalMovement");
+const importedQuantity =document.getElementById("importedQuantity");
+const exportedQuantity =document.getElementById( "exportedQuantity");
+const netMovement =document.getElementById("netMovement");
+const importBar =document.getElementById("importBar");
+const exportBar =document.getElementById("exportBar");
+const importBarValue =document.getElementById("importBarValue");
+const exportBarValue =document.getElementById("exportBarValue");
+const chartDescription =document.getElementById("chartDescription");
+const movementRecordCount =document.getElementById("movementRecordCount");
+const movementTableBody =document.getElementById("movementTableBody");
+const mobileMovementList =document.getElementById("mobileMovementList");
 let currentPeriod = "daily";
-
-
 /* =========================
 GET PERIOD DATA
 ========================= */
 
-
 function getPeriodData(record) {
-
-
 return {
-
-
-    imported:
-        record[
-            `${currentPeriod}Import`
-        ],
-
-
-    exported:
-        record[
-            `${currentPeriod}Export`
-        ]
-
-
+    imported:record[`${currentPeriod}Import`],
+    exported: record[ `${currentPeriod}Export` ]
 };
-
-
 }
 
 

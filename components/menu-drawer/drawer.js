@@ -22,7 +22,7 @@ let headerHTML = `
          <button
              class="notification"
              aria-label="Notifications">
-             ♧
+             🔔
          </button>
           <button
              class="quick-menu-button"
