@@ -95,17 +95,14 @@ drawerLinks.forEach(link => {
 
     if (currentPage === linkedPage) {
         link.classList.add("active");
-         console.log(linkedPage);
+        // console.log(linkedPage);
     }
    
 });
 }
 link_tabs('aside')
 link_tabs('.quick-menu-content')
-const container = document.querySelectorAll(".quick-menu-content a");
-container.forEach(a => {
-    console.log(a.classList.contains("active"));
-})
+
 //console.log("")
 // active page / activation 
 

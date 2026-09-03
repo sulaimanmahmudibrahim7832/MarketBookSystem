@@ -849,7 +849,7 @@ CLEAR FILTERS
 clearFilters.addEventListener(
 "click",
 function() {
-
+ 
 
     activityType.value =
         "all";

@@ -14,16 +14,10 @@ const movementRecords = [
 {
     productId: "PRD-001",
     productName: "Nike Air Max 270",
-
-
     dailyImport: 20,
     dailyExport: 8,
-
-
     weeklyImport: 75,
     weeklyExport: 31,
-
-
     monthlyImport: 240,
     monthlyExport: 112
 },
@@ -280,14 +274,8 @@ movementRecords.forEach(
         const data =
             getPeriodData(record);
 
-
-
-
         totalImported +=
             data.imported;
-
-
-
 
         totalExported +=
             data.exported;

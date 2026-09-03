@@ -1,203 +1,12 @@
-/* =========================
-TEMPORARY USER PRODUCTS
-
-
-These represent products
-already activated by the
-current business.
-
-
-Later this will come from
-the backend/database.
-========================= */
-
-
-const activeProducts = [
-
-
-{
-
-
-    id: "PRD-001",
-
-
-    name: "Nike Air Max 270",
-
-
-    quantity: 62
-
-
-},
-
-
-
-
-{
-
-
-    id: "PRD-003",
-
-
-    name: "Canvas Shoe",
-
-
-    quantity: 35
-
-
-},
-
-
-
-
-{
-
-
-    id: "PRD-005",
-
-
-    name: "Men's Leather Shoe",
-
-
-    quantity: 47
-
-
-}
-
-
-];
-
-
-/* =========================
-TEMPORARY EXPORT DATA
-========================= */
-
-
-const exportRecords = [
-
-
-{
-
-
-    id: "EXP-001",
-
-
-    productId: "PRD-001",
-
-
-    productName: "Nike Air Max 270",
-
-
-    quantity: 8,
-
-
-    destination: "Customer A",
-
-
-    reference: "INV-2001",
-
-
-    date: "2026-08-28"
-
-
-},
-
-
-
-
-{
-
-
-    id: "EXP-002",
-
-
-    productId: "PRD-003",
-
-
-    productName: "Canvas Shoe",
-
-
-    quantity: 5,
-
-
-    destination: "Wambai Market",
-
-
-    reference: "INV-2002",
-
-
-    date: "2026-08-27"
-
-
-},
-
-
-
-
-{
-
-
-    id: "EXP-003",
-
-
-    productId: "PRD-005",
-
-
-    productName: "Men's Leather Shoe",
-
-
-    quantity: 3,
-
-
-    destination: "Kwari Market",
-
-
-    reference: "INV-2003",
-
-
-    date: "2026-08-26"
-
-
-}
-
-
-];
-
-
-/* =========================
-ELEMENTS
-========================= */
-
-
+import { activeProducts } from "../assests/data/import-data.js";
+import { exportRecords } from "../assests/data/export-data.js";
 const exportForm =
+document.getElementById("exportForm");
+const productSelect =document.getElementById("productId");
+const availableQuantity =document.getElementById("availableQuantity");
 
 
-document.getElementById(
-    "exportForm"
-);
-
-
-const productSelect =
-
-
-document.getElementById(
-    "productId"
-);
-
-
-const availableQuantity =
-
-
-document.getElementById(
-    "availableQuantity"
-);
-
-
-const tableBody =
-
-
-document.getElementById(
-    "exportTableBody"
-);
+const tableBody =document.getElementById( "exportTableBody");
 
 
 const mobileExportList =
@@ -303,10 +112,7 @@ const selectedProduct =
 
 
     activeProducts.find(
-        product =>
-            product.id ===
-            productSelect.value
-    );
+        product =>product.id ===productSelect.value);
 
 
 
@@ -617,10 +423,6 @@ if (
 
 exportRecords.forEach(
     record => {
-
-
-
-
         const item =
             document.createElement(
                 "article"
@@ -681,14 +483,8 @@ exportRecords.forEach(
 
 
                     data-export-id="${record.id}"
-
-
                     aria-label="Export options">
-
-
                     ⋮
-
-
                 </button>
 
 

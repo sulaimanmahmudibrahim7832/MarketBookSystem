@@ -1,219 +1,14 @@
-/* =========================
-TEMPORARY USER PRODUCTS
 
+import { importRecords,activeProducts } from "../assests/data/import-data.js";
 
-These represent products
-already activated by the
-current business.
 
+const importForm = document.getElementById("importForm");
+const productSelect = document.getElementById("productId");
+const tableBody = document.getElementById("importTableBody");
+const mobileImportList = document.getElementById("mobileImportList");
 
-Later this will come from
-the backend/database.
-========================= */
-
-
-const activeProducts = [
-
-
-{
-
-
-    id: "PRD-001",
-
-
-    name: "Nike Air Max 270",
-
-
-    quantity: 20
-
-
-},
-
-
-
-
-{
-
-
-    id: "PRD-003",
-
-
-    name: "Canvas Shoe",
-
-
-    quantity: 35
-
-
-},
-
-
-
-
-{
-
-
-    id: "PRD-005",
-
-
-    name: "Men's Leather Shoe",
-
-
-    quantity: 15
-
-
-}
-
-
-];
-
-
-/* =========================
-TEMPORARY IMPORT DATA
-========================= */
-
-
-const importRecords = [
-
-
-{
-
-
-    id: "IMP-001",
-
-
-    productId: "PRD-001",
-
-
-    productName: "Nike Air Max 270",
-
-
-    quantity: 50,
-
-
-    supplier: "Supplier A",
-
-
-    reference: "INV-1001",
-
-
-    date: "2026-08-28"
-
-
-},
-
-
-
-
-{
-
-
-    id: "IMP-002",
-
-
-    productId: "PRD-003",
-
-
-    productName: "Canvas Shoe",
-
-
-    quantity: 80,
-
-
-    supplier: "Supplier B",
-
-
-    reference: "INV-1002",
-
-
-    date: "2026-08-27"
-
-
-},
-
-
-
-
-{
-
-
-    id: "IMP-003",
-
-
-    productId: "PRD-005",
-
-
-    productName: "Men's Leather Shoe",
-
-
-    quantity: 35,
-
-
-    supplier: "Supplier C",
-
-
-    reference: "INV-1003",
-
-
-    date: "2026-08-26"
-
-
-}
-
-
-];
-
-
-/* =========================
-ELEMENTS
-========================= */
-
-
-const importForm =
-
-
-document.getElementById(
-    "importForm"
-);
-
-
-const productSelect =
-
-
-document.getElementById(
-    "productId"
-);
-
-
-const tableBody =
-
-
-document.getElementById(
-    "importTableBody"
-);
-
-
-const mobileImportList =
-
-
-document.getElementById(
-    "mobileImportList"
-);
-
-
-const importRecordCount =
-
-
-document.getElementById(
-    "importRecordCount"
-);
-
-
-const recentImportCount =
-
-
-document.getElementById(
-    "recentImportCount"
-);
+const importRecordCount = document.getElementById( "importRecordCount");
+const recentImportCount = document.getElementById("recentImportCount");
 
 
 /* =========================
@@ -222,64 +17,21 @@ PRODUCT SELECT
 
 
 function populateProducts() {
-
-
 productSelect.innerHTML = `
-
-
     <option value="">
-
-
         Select active product
-
-
     </option>
-
-
 `;
-
-
-
-
-
 
 activeProducts.forEach(
     product => {
 
-
-
-
-        const option =
-            document.createElement(
-                "option"
-            );
-
-
-
-
-        option.value =
-            product.id;
-
-
-
-
-        option.textContent =
-
-
-            `${product.name} (${product.id})`;
-
-
-
-
-        productSelect.appendChild(
-            option
-        );
-
-
+        const option =document.createElement("option");
+        option.value =product.id;
+        option.textContent =`${product.name} (${product.id})`;
+        productSelect.appendChild(option);
     }
 );
-
-
 }
 
 
@@ -289,29 +41,10 @@ COUNTS
 
 
 function updateImportCount() {
-
-
-const count =
-    importRecords.length;
-
-
-
-
-importRecordCount.textContent =
-    count;
-
-
-
-
+const count =importRecords.length;
+importRecordCount.textContent =count;
 recentImportCount.textContent =
-
-
-    `${count} record${
-        count === 1
-            ? ""
-            : "s"
-    }`;
-
+    `${count} record${count === 1 ? "": "s"}`;
 
 }
 
@@ -377,134 +110,41 @@ if (
 
 importRecords.forEach(
     record => {
-
-
-
-
-        const row =
-            document.createElement(
-                "tr"
-            );
-
-
-
-
+        const row =document.createElement("tr");
         row.innerHTML = `
-
-
             <td>
-
-
                 <span class="import-id">
-
-
                     ${record.id}
-
-
                 </span>
-
-
             </td>
-
-
-
-
             <td>
-
-
                 <span class="product-name">
-
-
                     ${record.productName}
-
-
                 </span>
-
-
             </td>
-
-
-
-
             <td>
-
-
                 ${record.quantity}
-
-
             </td>
-
-
-
-
             <td>
-
-
                 ${record.supplier}
-
-
             </td>
-
-
-
-
             <td>
-
-
                 ${record.reference || "-"}
-
-
             </td>
-
-
-
-
             <td>
-
-
                 ${record.date}
-
-
             </td>
-
-
-
-
             <td>
-
-
                 <button
-
-
                     class="record-action"
-
-
                     type="button"
-
-
                     data-import-id="${record.id}"
-
-
                     aria-label="Import options">
-
-
                     ⋮
-
-
                 </button>
-
-
             </td>
-
-
         `;
-
-
-
-
         tableBody.appendChild(row);
-
-
     }
 );
 
@@ -894,12 +534,7 @@ function(event) {
 
 
 
-    const note =
-
-
-        document.getElementById(
-            "note"
-        ).value.trim();
+    const note = document.getElementById("note").value.trim();
 
 
 
@@ -907,60 +542,19 @@ function(event) {
 
 
     const newRecord = {
-
-
-
-
-        id:
-
-
-            `IMP-${
-                String(
-                    importRecords.length + 1
-                ).padStart(3, "0")
-            }`,
-
-
-
-
-        productId:
-            selectedProduct.id,
-
-
-
-
-        productName:
-            selectedProduct.name,
-
-
-
-
+        id: `IMP-${String( importRecords.length + 1).padStart(3, "0") }`,
+        productId:selectedProduct.id,
+        productName:selectedProduct.name,
         quantity,
-
-
         supplier,
-
-
         reference,
-
-
-        date:
-            importDate,
-
-
+        date:importDate,
         note
-
-
     };
 
 
 
-
-
-
-    importRecords.unshift(
-        newRecord
-    );
+    importRecords.unshift(newRecord);
 
 
 
@@ -973,14 +567,7 @@ function(event) {
      */
 
 
-    selectedProduct.quantity +=
-        quantity;
-
-
-
-
-
-
+    selectedProduct.quantity +=quantity;
     importForm.reset();
 
 

@@ -1,15 +1,5 @@
 
 
-/* =========================
-TEMPORARY DASHBOARD DATA
-
-
-This represents information
-that will later be calculated
-from the backend/database.
-========================= */
-
-
 const dashboardData = {
 
 
@@ -240,7 +230,7 @@ const businessName =
 
 
 document.getElementById(
-    "businessName"
+    "businessName" 
 );
 
 

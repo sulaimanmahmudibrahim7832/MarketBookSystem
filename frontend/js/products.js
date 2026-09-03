@@ -1,69 +1,15 @@
-
-/* data objects for backend decisions */ 
-const productCatalogue = [
-{
-    id: "PRD-001",
-    name: "Nike Air Max 270",
-    category: "Sneakers",
-    brand: "Nike",
-    description:
-        "Sports and casual footwear."
-},
-{
-    id: "PRD-002",
-    name: "Men's Leather Shoe",
-    category: "Formal Shoes",
-    brand: "Generic",
-    description:
-        "Leather footwear for formal use."
-},
-{
-    id: "PRD-003",
-    name: "Canvas Shoe",
-    category: "Casual Shoes",
-    brand: "Generic",
-    description:
-        "Lightweight casual footwear."
-},
-{
-    id: "PRD-004",
-   name: "Leather Sandal",
-    category: "Sandals",
-    brand: "Generic",
-    description:
-        "Open footwear for everyday use."
-}
-];
-const activeProducts = [
-{
-    id: "PRD-001",
-    quantity: 20,
-    status: "Active"
-},
-{
-    id: "PRD-003",
-    quantity: 35,
-    status: "Active"
-}
-];
-
-/* =========================
-ELEMENTS
-========================= */
-
-
-const catalogueGrid =document.getElementById("catalogueGrid");
+import { productCatalogue,activeProducts } from "../assests/data/products-data.js";
+const catalogueGrid = document.getElementById("catalogueGrid");
 const activeProductTable =document.getElementById( "activeProductTable");
 const mobileProductList =document.getElementById(  "mobileProductList");
 const activeProductCount =document.getElementById( "activeProductCount");
 const productSearch =document.getElementById("productSearch");
 const categoryFilter =document.getElementById(  "categoryFilter");
-const addProductModal =document.getElementById(    "addProductModal");
-const showAddProductButton =document.getElementById("showAddProductButton");
+const showAddProductButton = document.getElementById("showAddProductButton");
+const addProductModal =document.getElementById("addProductModal");
 const closeAddProductButton =document.getElementById("closeAddProductButton");
 const cancelAddProductButton =document.getElementById("cancelAddProductButton");
 const addProductForm =document.getElementById("addProductForm");
-
 
 /* =========================
 CATEGORY FILTER
@@ -74,33 +20,6 @@ function populateCategories() {
 
 
     const categories = [  ...new Set(productCatalogue.map( product => product.category))];
-
-   /* const array = [
-        {
-            odd: 1,
-            even:2
-        },
-        {
-            odd: 3,
-            even:2
-        },
-        {
-            odd: 5,
-            even:6
-        },
-        {
-            odd: 7,
-            even:8
-        },
-        {
-            odd: 9,
-            even:10
-        }
-    ];
-
-    const evens = [...new Set(array.map(number => number.even))];
-    console.log(evens);
-*/
              categories.forEach(
                category => {
                    const option = document.createElement( "option");
@@ -112,6 +31,7 @@ function populateCategories() {
             };
 
 
+            
 /* =========================
 ACTIVE PRODUCT CHECK
 ========================= */
@@ -211,7 +131,7 @@ if (!Number.isInteger(quantity) ||quantity < 0) {
 
 activeProducts.push({
     id: product.id,
-    quantity:quantity,
+    quantity,
     status:"Active"
 });
 
@@ -366,14 +286,16 @@ ADD NEW PRODUCT
 
 function openAddProductModal() {
 addProductModal.classList.add("active");
-addProductModal.setAttribute( "aria-hidden","false");
+    addProductModal.setAttribute("aria-hidden", "false");
+    
 }
 
 
 function closeAddProductModal() {
 addProductModal.classList.remove( "active");
 addProductModal.setAttribute( "aria-hidden","true");
-addProductForm.reset();
+    addProductForm.reset();
+   
 }
 
 
@@ -388,12 +310,11 @@ addProductForm.addEventListener("submit",event=> {
     const category =document.getElementById("newProductCategory").value.trim();
     const brand =document.getElementById( "newProductBrand").value.trim();
     const description = document.getElementById("newProductDescription").value.trim();
-    const nextId =
-        `PRD-${String( productCatalogue.length + 1).padStart(3, "0")}`;
+    const nextId =  `PRD-${String( productCatalogue.length + 1).padStart(3, "0")}`;
     const newProduct = {
         id:nextId,
         name,
-        category: category || " no category Added",
+        category: category || " no category Provided",
         brand: brand || "Generic",
         description: description || "No description provided."
     };
@@ -402,7 +323,7 @@ addProductForm.addEventListener("submit",event=> {
     populateCategories();
     renderAll();
     alert(`${name} was added to the PITMS product catalogue.` );
-});
+}); 
 
 
 /* =========================
@@ -416,10 +337,7 @@ showAddProductButton.addEventListener("click",openAddProductModal);
 closeAddProductButton.addEventListener("click",closeAddProductModal);
 cancelAddProductButton.addEventListener("click",closeAddProductModal);
 catalogueGrid.addEventListener("click",event=>{
-    const button =
-        event.target.closest(
-            "button[data-product-id]"
-        );
+    const button = event.target.closest("button[data-product-id]");
     if (!button) {
         return;
     }
