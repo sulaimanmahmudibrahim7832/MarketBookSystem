@@ -336,8 +336,19 @@ addProductModal.setAttribute( "aria-hidden","true");
 NEW PRODUCT SUBMISSION
 ========================= */
 
-
-addProductForm.addEventListener("submit",event=> {
+const popDiv = document.getElementById("pop-id");
+const details = document.querySelector(".details");
+const closedButton = document.getElementById("closedAdded");
+const addedProductButton = document.getElementById("added-product");
+function openAddedProduct() {
+    popDiv.style.display = "grid";
+}
+function closedAddedProduct() {
+    popDiv.style.display = "none";
+}
+addedProductButton.addEventListener("click", openAddedProduct);
+closedButton.addEventListener("click", closedAddedProduct);
+addProductForm.addEventListener("submit", event => {
     event.preventDefault();
     const name =document.getElementById("newProductName").value.trim();
     const category =document.getElementById("newProductCategory").value.trim();
@@ -355,10 +366,18 @@ addProductForm.addEventListener("submit",event=> {
     closeAddProductModal();
     populateCategories();
     renderAll();
-    alert(`${name} was added to the PITMS product catalogue.` );
+    setTimeout(() => {
+        closedAddedProduct(); 
+    }, 5000)
+    details.innerHTML = `${name} \t was added to the PITMS product catalogue.`;
 }); 
 
 
+const Description = document.getElementById("newProductDescription");
+Description.addEventListener("mouseenter", () => {
+    Description.textContent = "\t \t";
+})
+closedAddedProduct();
 /* =========================
 EVENTS
 ========================= */

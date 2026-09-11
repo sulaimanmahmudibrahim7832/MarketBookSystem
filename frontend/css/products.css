@@ -6,47 +6,21 @@ SECTIONS
 
 .catalogue-section,
 .active-section {
-
-
 background: white;
-
-
 border: 1px solid #e5e7eb;
-
-
 border-radius: 14px;
-
-
 overflow: hidden;
-
-
 margin-bottom: 20px;
-
-
 }
 
 
 .section-heading {
-
-
 display: flex;
-
-
 align-items: center;
-
-
 justify-content: space-between;
-
-
 gap: 15px;
-
-
 padding: 18px 20px;
-
-
 border-bottom: 1px solid #e5e7eb;
-
-
 }
 
 
@@ -172,14 +146,30 @@ border-bottom: 1px solid #eef0f3;
 }
 
 
-.search-group {
-
-
+#Quantity,.search-group {
 flex: 1;
-
+}
+.quantity-input{
+    width:inherit;
+    padding:10px 10px;
+    border-radius:10px;
+    border:solid 1px gray;
+    box-shadow: 0.5px 0.1px 0.9px rgb(208, 240, 208);
 
 }
-
+.popUp-container{
+    position:relative;
+    background-color:#172033;
+    color:whitesmoke;
+    padding:10vh;
+    text-align: center;
+    border-radius:10px;
+}
+.popUp-container button{
+    position: absolute;
+    left:0;
+    top:0;
+}
 
 .filter-group {
 
