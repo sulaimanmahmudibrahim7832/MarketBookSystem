@@ -39,14 +39,14 @@ const historyRecords = [
     id: "ACT-006",
     type: "account",
     description:"Business account information updated",
-    reference:"-",
+    reference:"INV-2009",
     date:"2026-08-26"
   },
   {
     id: "ACT-007",
     type: "import",
-    description: "-",
-    reference: "-",
+    description: "no discription provided",
+    reference: "INV-3001",
     date:"2026-09-03"
 }
 ];

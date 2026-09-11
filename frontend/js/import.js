@@ -1,15 +1,11 @@
 
 import { importRecords,activeProducts } from "../assests/data/import-data.js";
-
-
 const importForm = document.getElementById("importForm");
 const productSelect = document.getElementById("productId");
 const tableBody = document.getElementById("importTableBody");
 const mobileImportList = document.getElementById("mobileImportList");
-
 const importRecordCount = document.getElementById( "importRecordCount");
 const recentImportCount = document.getElementById("recentImportCount");
-
 
 /* =========================
 PRODUCT SELECT
@@ -25,7 +21,6 @@ productSelect.innerHTML = `
 
 activeProducts.forEach(
     product => {
-
         const option =document.createElement("option");
         option.value =product.id;
         option.textContent =`${product.name} (${product.id})`;
@@ -62,13 +57,7 @@ tableBody.innerHTML = "";
 
 
 
-if (
-    importRecords.length === 0
-) {
-
-
-
-
+if (importRecords.length === 0) {
     tableBody.innerHTML = `
 
 

@@ -11,10 +11,50 @@ const closeAddProductButton =document.getElementById("closeAddProductButton");
 const cancelAddProductButton =document.getElementById("cancelAddProductButton");
 const addProductForm =document.getElementById("addProductForm");
 
+
+
+
+const quantityInput = document.getElementById("Quantity");
+const quantityForm = document.getElementById("addQuantityForm");
+const quantityAddButton = document.getElementById("quantityAddbutton");    
+const cancelQuantityButton = document.getElementById("cancelQuantityButton");
+const closeQuantityButtton = document.getElementById("closeQuantityButton");
+const quantityModalDiv = document.getElementById("addQuantityModal");
+   async function openQuantityModal() {
+   quantityModalDiv.classList.add("active");
+    quantityModalDiv.setAttribute("aria-hidden", "false");
+   
+       
+}
+ function closeQuantityModal() {
+quantityModalDiv.classList.remove( "active");
+     quantityModalDiv.setAttribute("aria-hidden", "true");
+     quantityForm.reset();
+}
+closeQuantityButtton.addEventListener("click",closeQuantityModal);
+cancelQuantityButton.addEventListener("click",closeQuantityModal);
+async function activateModalQuantity() {    
+    const quantity = await waitForQuantity();
+    
+    function waitForQuantity() {
+        return new Promise(resolve => {
+            quantityAddButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                 
+                const quantity = Number(quantityInput.value);
+                resolve(quantity);
+            },{once:true});
+        });
+    }
+    
+    closeQuantityModal();
+    return quantity;
+
+}
+
 /* =========================
 CATEGORY FILTER
 ========================= */
-
 
 function populateCategories() {
 
@@ -110,33 +150,26 @@ ACTIVATE PRODUCT
 ========================= */
 
 
-function activateProduct(productId) {
-
-const product =productCatalogue.find(item =>item.id === productId);
+ async function activateProduct(productId) {
+   const product = productCatalogue.find(item => item.id === productId);
 if (!product) {
     return;
-}
-    const quantityText = prompt(`Enter your available quantity for ${product.name}:`);
-    if (quantityText === null) {
-    return;
-}
+     }
 
-const quantity =  Number(quantityText);
-
+  openQuantityModal();
+  const quantity = await activateModalQuantity();
 if (!Number.isInteger(quantity) ||quantity < 0) {
 
     alert( "Please enter a valid quantity.");
     return;
 }
 
-activeProducts.push({
+ activeProducts.push({
     id: product.id,
     quantity,
     status:"Active"
-});
-
-
-
+ });
+    
 renderAll();
 }
 
@@ -341,9 +374,7 @@ catalogueGrid.addEventListener("click",event=>{
     if (!button) {
         return;
     }
-    activateProduct(
-        button.dataset.productId
-    );
+    activateProduct( button.dataset.productId);
 });
 
 

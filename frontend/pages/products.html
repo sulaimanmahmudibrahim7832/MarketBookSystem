@@ -145,7 +145,6 @@
 </section>
 
 
-
 <!-- ACTIVE PRODUCTS -->
 
 <section class="active-section">
@@ -238,15 +237,9 @@
     class="modal"
     id="addProductModal"
     aria-hidden="true">
-
-
     <div class="modal-content">
-
-
         <div class="modal-header">
-
             <div>
-
                 <h2>
                     Add New Product
                 </h2>
@@ -366,6 +359,71 @@
 
 </div>
 
+
+<div
+    class="modal"
+    id="addQuantityModal"
+     aria-hidden="false">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>
+                <h2>
+                    Add Product Qauntity
+                </h2>
+
+                <p>
+                  the quantity of your available product 
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-button"
+                id="closeQuantityButton"
+                aria-label="closed">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <form id="addQuantityForm">
+
+
+            <div class="form-group">
+
+                <label for="newQuantity">
+                    Qauntity Name
+                </label>
+            </div>
+            <div class="form-grid">
+                    <input
+                        id="Quantity"
+                        type="number"
+                        placeholder="e.g 100 ">
+
+            </div>
+            <div class="modal-actions q-modal-action">
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelQuantityButton">
+                    Cancel
+                </button>
+                <button
+                   id="quantityAddbutton"
+                    type="click" class="primary-button">
+                    Add Quantity
+                </button> 
+            </div>
+        </form>
+    </div>
+</div>
 </main>
 <script type="module" src="../js/products.js">
 
