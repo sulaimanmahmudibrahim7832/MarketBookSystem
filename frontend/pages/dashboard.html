@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>PITMS - Dashboard</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../../components/menu-drawer/menu.css">
+<link rel="stylesheet" href="../../components/shared/shared.css">
+
+</head>
+<body>
+    <header class="header">
+
+    </header>
+     <aside
+     class="menu-drawer"
+     id="menuDrawer">
+    
+    </aside>
+    <main class="page-container">
+
+<section class="page-header">
+
+    <div>
+
+        <p class="page-label">
+            PITMS
+        </p>
+
+        <h1>
+            Dashboard
+        </h1>
+
+        <p class="page-description">
+            Overview of your business activity and inventory.
+        </p>
+
+    </div>
+
+
+    <div class="business-info">
+
+        <span id="businessType">
+            Retail Business
+        </span>
+
+        <strong id="businessName">
+            My Shoe Store
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<!-- SUMMARY CARDS -->
+
+<section class="summary-grid">
+
+
+    <article class="summary-card">
+
+        <span>
+            Active Products
+        </span>
+
+        <strong id="activeProducts">
+            0
+        </strong>
+
+        <small>
+            Products activated for your business
+        </small>
+
+    </article>
+
+
+
+    <article class="summary-card">
+
+        <span>
+            Current Inventory
+        </span>
+
+        <strong id="currentInventory">
+            0
+        </strong>
+
+        <small>
+            Total available quantity
+        </small>
+
+    </article>
+
+
+
+    <article class="summary-card">
+
+        <span>
+            Total Imports
+        </span>
+
+        <strong id="totalImports">
+            0
+        </strong>
+
+        <small>
+            Units received
+        </small>
+
+    </article>
+
+
+
+    <article class="summary-card">
+
+        <span>
+            Total Exports
+        </span>
+
+        <strong id="totalExports">
+            0
+        </strong>
+
+        <small>
+            Units leaving inventory
+        </small>
+
+    </article>
+
+
+</section>
+
+
+
+<!-- BUSINESS MOVEMENT -->
+
+<section class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Business Movement
+            </h2>
+
+            <p>
+                Recent movement of products in your business.
+            </p>
+
+        </div>
+
+        <a href="tracking.html">
+            View Tracking
+        </a>
+
+    </div>
+
+
+
+    <div class="movement-grid">
+
+
+        <article class="movement-card">
+
+            <span>
+                Today
+            </span>
+
+            <strong id="dailyMovement">
+                0
+            </strong>
+
+            <small>
+                Units moved
+            </small>
+
+        </article>
+
+
+
+        <article class="movement-card">
+
+            <span>
+                This Week
+            </span>
+
+            <strong id="weeklyMovement">
+                0
+            </strong>
+
+            <small>
+                Units moved
+            </small>
+
+        </article>
+
+
+
+        <article class="movement-card">
+
+            <span>
+                This Month
+            </span>
+
+            <strong id="monthlyMovement">
+                0
+            </strong>
+
+            <small>
+                Units moved
+            </small>
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- RECENT ACTIVITY -->
+
+<section class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Recent Activity
+            </h2>
+
+            <p>
+                Latest business transactions.
+            </p>
+
+        </div>
+
+        <a href="history.html">
+            View History
+        </a>
+
+    </div>
+
+
+
+    <div
+        class="activity-list"
+        id="activityList">
+
+        <!-- JavaScript inserts activity -->
+
+    </div>
+
+
+</section>
+
+
+
+<!-- QUICK ACTIONS -->
+
+<section class="dashboard-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Quick Actions
+            </h2>
+
+            <p>
+                Access the main business operations.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="quick-actions">
+
+
+        <a
+            href="products.html"
+            class="action-card">
+
+            <strong>
+                Products
+            </strong>
+
+            <span>
+                Manage your products
+            </span>
+
+        </a>
+
+
+        <a
+            href="import.html"
+            class="action-card">
+
+            <strong>
+                Import
+            </strong>
+
+            <span>
+                Record incoming products
+            </span>
+
+        </a>
+
+
+        <a
+            href="export.html"
+            class="action-card">
+
+            <strong>
+                Export
+            </strong>
+
+            <span>
+                Record outgoing products
+            </span>
+
+        </a>
+
+
+        <a
+            href="tracking.html"
+            class="action-card">
+
+            <strong>
+                Tracking
+            </strong>
+
+            <span>
+                Analyze product movement
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+</main>
+<script type="module" src="../js/dashboard.js">
+    
+</script>
+<script src="../../components/menu-drawer/drawer.js">
+</script>
+<script src="../../components/menu-drawer/menu.js">
+</script>
+
+</body>
+</html>
