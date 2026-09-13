@@ -138,36 +138,13 @@ function renderMobileRecords() {
 mobileExportList.innerHTML = "";
     if (exportRecords.length === 0)
     {
-
-
-
-
     mobileExportList.innerHTML = `
-
-
         <div class="empty-state">
-
-
             No export records found.
-
-
         </div>
-
-
     `;
-
-
-
-
     return;
-
-
 }
-
-
-
-
-
 
 exportRecords.forEach(
     record => {
@@ -191,97 +168,42 @@ exportRecords.forEach(
                     aria-label="Export options">
                     ⋮
                 </button>
-
-
-
-
             </div>
 
-
-
-
-
-
             <div class="mobile-record-details">
-
-
-
-
                 <div class="mobile-detail">
-
-
                     <span>
                         Product ID
                     </span>
-
-
                     <strong>
                         ${record.productId}
                     </strong>
-
-
                 </div>
-
-
-
-
                 <div class="mobile-detail">
-
-
                     <span>
                         Quantity
                     </span>
-
-
                     <strong>
                         ${record.quantity}
                     </strong>
-
-
                 </div>
-
-
-
-
                 <div class="mobile-detail">
-
-
                     <span>
                         Destination
                     </span>
-
-
                     <strong>
                         ${record.destination}
                     </strong>
-
-
                 </div>
-
-
-
-
                 <div class="mobile-detail">
-
-
                     <span>
                         Reference
                     </span>
-
-
                     <strong>
                         ${record.reference || "-"}
                     </strong>
-
-
                 </div>
-
-
-
-
                 <div class="mobile-detail">
-
-
                     <span>
                         Date
                     </span>

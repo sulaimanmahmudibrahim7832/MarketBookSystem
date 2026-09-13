@@ -2,9 +2,9 @@ let drawerHTML = '';
 const aside = document.getElementById("menuDrawer");
 const header = document.querySelector(".header");
 const user ={
-    name: "Tahir Abdulkadir Dan Wawu",
-    accountType: "Retailer",
-    avater:"TD"
+    name: "Sulaiman",
+    accountType: "Whole saler",
+    avater:"SMI"
 }
 let headerHTML = `
      <div class="header-left">
