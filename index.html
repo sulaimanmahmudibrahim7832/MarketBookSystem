@@ -3,11 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prototype page</title>
+    <title>PITMS - Overview</title>
+    <style>
+        body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:32px;line-height:1.5;color:#222}
+        header{display:flex;justify-content:space-between;align-items:center}
+        nav a{margin-right:12px;color:#0366d6;text-decoration:none}
+        .card{border:1px solid #e1e4e8;padding:16px;border-radius:8px;margin-top:16px;max-width:900px}
+        .grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+        .grid .card{flex:1 1 280px}
+        footer{margin-top:24px;color:#555;font-size:0.95rem}
+        .contact a{color:#0366d6}
+    </style>
 </head>
 <body>
-    <h1>go to Dashboard</h1>
-    <a href="frontend/pages/dashboard.html"> dashboard  </a>
-    
+    <header>
+        <div>
+            <h1>PITMS — Prototype Overview</h1>
+            <p style="margin:4px 0 0;color:#555">Product Inventory & Tracking Management System (PITMS)</p>
+        </div>
+        <nav>
+            <a href="frontend/pages/dashboard.html">Dashboard</a>
+            <a href="frontend/pages/acccount.html">Account</a>
+            <a href="frontend/pages/products.html">Products</a>
+            <a href="frontend/pages/import.html">Import</a>
+            <a href="frontend/pages/export.html">Export</a>
+            <a href="frontend/pages/tracking.html">Tracking</a>
+            <a href="frontend/pages/history.html">History</a>
+        </nav>
+    </header>
+
+    <section class="card">
+        <h2>System summary</h2>
+        <p>
+            This prototype provides a simple interface to manage business inventory and product movement.
+            Use the Dashboard to get a snapshot of active products, current inventory and recent activity.
+            The Account page stores business information and status. Products, Import and Export pages are used to manage product records and record incoming/outgoing stock. Tracking and History help analyze movements and review past transactions.
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Dashboard</h3>
+                <p>Overview of your business activity, quick summary cards and recent movement.</p>
+                <p><a href="frontend/pages/dashboard.html">Open Dashboard</a></p>
+            </div>
+
+            <div class="card">
+                <h3>Account</h3>
+                <p>Business profile, contact information and account activity.</p>
+                <p><a href="frontend/pages/acccount.html">Open Account</a></p>
+            </div>
+
+            <div class="card">
+                <h3>Products & Inventory</h3>
+                <p>Manage product listings, view counts, and update availability (Products / Import / Export pages).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card contact">
+        <h2>Contact</h2>
+        <p>If you need help or want to report an issue, contact the system administrator:</p>
+        <ul>
+            <li>Email: <a href="mailto:support@example.com">support@example.com</a> (replace with your support email)</li>
+            <li>Phone: <a href="tel:+2348000000000">+234 800 000 0000</a> (replace with your contact number)</li>
+        </ul>
+        <p style="color:#a00">Note: I used placeholder contact details. Reply with the exact email address and phone numbers you want and I will update them in the file.</p>
+    </section>
+
+    <footer>
+        <small>Repository: sulaimanmahmudibrahim7832/Merachant_assistent • Last updated: prototype index</small>
+    </footer>
 </body>
 </html>
