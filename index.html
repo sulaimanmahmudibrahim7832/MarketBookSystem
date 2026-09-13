@@ -3,80 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PITMS - Overview</title>
+    <title>PITMS - Product Inventory & Tracking Management System</title>
     <style>
-        body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:32px;line-height:1.5;color:#222}
-        header{display:flex;justify-content:space-between;align-items:center}
-        nav a{margin-right:12px;color:#0366d6;text-decoration:none}
-        .card{border:1px solid #e1e4e8;padding:16px;border-radius:8px;margin-top:16px;max-width:900px}
-        .grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-        .grid .card{flex:1 1 280px}
-        footer{margin-top:24px;color:#555;font-size:0.95rem}
-        .contact a{color:#0366d6}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: #f6f8fa;
+            color: #222;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e1e4e8;
+            padding: 24px 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        header > div {
+            margin-bottom: 16px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 4px;
+            color: #1f2937;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            padding: 8px 14px;
+            color: #0366d6;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: #f0f0f0;
+            color: #0256c7;
+        }
+        
+        main {
+            padding: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+        
+        .card p {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .grid .card {
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        
+        .grid .card:hover {
+            border-color: #0366d6;
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.1);
+        }
+        
+        .grid .card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+        
+        .grid .card p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .grid .card a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #0366d6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .grid .card a:hover {
+            background: #0256c7;
+            box-shadow: 0 2px 4px rgba(3, 102, 214, 0.2);
+        }
+        
+        .contact {
+            background: #f9f9f9;
+        }
+        
+        .contact ul {
+            list-style: none;
+            margin: 16px 0;
+        }
+        
+        .contact li {
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .contact a {
+            color: #0366d6;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact a:hover {
+            color: #0256c7;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #fff;
+            border-top: 1px solid #e1e4e8;
+            padding: 20px 32px;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
     <header>
         <div>
-            <h1>PITMS — Prototype Overview</h1>
-            <p style="margin:4px 0 0;color:#555">Product Inventory & Tracking Management System (PITMS)</p>
+            <h1>PITMS</h1>
+            <p>Product Inventory & Tracking Management System</p>
         </div>
         <nav>
-            <a href="frontend/pages/dashboard.html">Dashboard</a>
-            <a href="frontend/pages/acccount.html">Account</a>
-            <a href="frontend/pages/products.html">Products</a>
-            <a href="frontend/pages/import.html">Import</a>
-            <a href="frontend/pages/export.html">Export</a>
-            <a href="frontend/pages/tracking.html">Tracking</a>
-            <a href="frontend/pages/history.html">History</a>
+            <a href="frontend/pages/dashboard.html">📊 Dashboard</a>
+            <a href="frontend/pages/acccount.html">👤 Account</a>
+            <a href="frontend/pages/products.html">📦 Products</a>
+            <a href="frontend/pages/import.html">📥 Import</a>
+            <a href="frontend/pages/export.html">📤 Export</a>
+            <a href="frontend/pages/tracking.html">🔍 Tracking</a>
+            <a href="frontend/pages/history.html">📋 History</a>
         </nav>
     </header>
 
-    <section class="card">
-        <h2>System summary</h2>
-        <p>
-            This prototype provides a simple interface to manage business inventory and product movement.
-            Use the Dashboard to get a snapshot of active products, current inventory and recent activity.
-            The Account page stores business information and status. Products, Import and Export pages are used to manage product records and record incoming/outgoing stock. Tracking and History help analyze movements and review past transactions.
-        </p>
+    <main>
+        <section class="card">
+            <h2>Welcome to PITMS</h2>
+            <p>
+                Manage your business inventory and product movement efficiently. Get a complete overview of your active products, current stock levels, and recent activity with our simple and intuitive interface.
+            </p>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Dashboard</h3>
-                <p>Overview of your business activity, quick summary cards and recent movement.</p>
-                <p><a href="frontend/pages/dashboard.html">Open Dashboard</a></p>
+            <div class="grid">
+                <div class="card">
+                    <h3>📊 Dashboard</h3>
+                    <p>Get a quick overview of your business activity and recent inventory movements.</p>
+                    <a href="frontend/pages/dashboard.html">Open Dashboard</a>
+                </div>
+
+                <div class="card">
+                    <h3>👤 Account</h3>
+                    <p>Manage your business profile and account information.</p>
+                    <a href="frontend/pages/acccount.html">Open Account</a>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Products</h3>
+                    <p>Manage your product listings and inventory levels.</p>
+                    <a href="frontend/pages/products.html">View Products</a>
+                </div>
+
+                <div class="card">
+                    <h3>📥 Import</h3>
+                    <p>Record incoming stock and product additions.</p>
+                    <a href="frontend/pages/import.html">Add Stock</a>
+                </div>
+
+                <div class="card">
+                    <h3>📤 Export</h3>
+                    <p>Record outgoing stock and product removals.</p>
+                    <a href="frontend/pages/export.html">Remove Stock</a>
+                </div>
+
+                <div class="card">
+                    <h3>🔍 Tracking</h3>
+                    <p>Track product movement and inventory changes.</p>
+                    <a href="frontend/pages/tracking.html">Track Items</a>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Account</h3>
-                <p>Business profile, contact information and account activity.</p>
-                <p><a href="frontend/pages/acccount.html">Open Account</a></p>
-            </div>
-
-            <div class="card">
-                <h3>Products & Inventory</h3>
-                <p>Manage product listings, view counts, and update availability (Products / Import / Export pages).</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="card contact">
-        <h2>Contact</h2>
-        <p>If you need help, want to report an issue, or discuss features and requirements, contact the system owner:</p>
-        <ul>
-            <li>Email: <a href="mailto:sulaimanmahmudibrahim7832@gmail.com">sulaimanmahmudibrahim7832@gmail.com</a></li>
-            <li>Phone (call): <a href="tel:+2349076776898">09076776898</a> or <a href="tel:+2349035924580">09035924580</a></li>
-            <li>WhatsApp: <a href="https://wa.me/2349076776898" target="_blank" rel="noopener">Chat 09076776898</a> or <a href="https://wa.me/2349035924580" target="_blank" rel="noopener">Chat 09035924580</a></li>
-        </ul>
-        <p>
-            Note: This is a frontend prototype. Backend services and business rules are not yet implemented.
-            You're welcome to discuss features, requirements, and suggested workflows before any backend or business-rule implementation — feedback helps shape the final system.
-        </p>
-        <p style="color:#a00">If you'd like, provide more contact labels (Support, Sales, Admin) or a preferred response timeframe and I'll update this section.</p>
-    </section>
+        <section class="card contact">
+            <h2>Need Help?</h2>
+            <p>Get in touch with the system owner:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:sulaimanmahmudibrahim7832@gmail.com">sulaimanmahmudibrahim7832@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+2349076776898">+234 907 677 6898</a> or <a href="tel:+2349035924580">+234 903 592 4580</a></li>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/2349076776898" target="_blank" rel="noopener">Chat us on WhatsApp</a></li>
+            </ul>
+            
+            <p class="hidden">If you'd like, provide more contact labels (Support, Sales, Admin) or a preferred response timeframe and I'll update this section.</p>
+        </section>
+    </main>
 
     <footer>
-        <small>Repository: sulaimanmahmudibrahim7832/Merachant_assistent • Last updated: prototype index</small>
+        <small>PITMS — Supported by Sulaiman Mahmud Ibrahim</small>
     </footer>
 </body>
 </html>
