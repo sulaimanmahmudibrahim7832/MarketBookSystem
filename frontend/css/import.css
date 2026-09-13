@@ -3,29 +3,19 @@
 SECTIONS
 ========================= */
 
-
 .import-section,
 .records-section {
-
-
 background: white;
-
-
 border: 1px solid #e5e7eb;
-
-
 border-radius: 14px;
-
-
 overflow: hidden;
-
-
 margin-bottom: 20px;
 
-
 }
-
-
+.action-section{
+    width:5vw;
+    margin-left:0;
+}
 .section-heading {
 
 

@@ -20,7 +20,16 @@ const quantityAddButton = document.getElementById("quantityAddbutton");
 const cancelQuantityButton = document.getElementById("cancelQuantityButton");
 const closeQuantityButtton = document.getElementById("closeQuantityButton");
 const quantityModalDiv = document.getElementById("addQuantityModal");
-   async function openQuantityModal() {
+
+
+
+
+
+const popDiv = document.getElementById("pop-id");
+const details = document.querySelector(".details");
+const closedButton = document.getElementById("closedAdded");
+const addedProductButton = document.getElementById("added-product");
+    function openQuantityModal() {
    quantityModalDiv.classList.add("active");
     quantityModalDiv.setAttribute("aria-hidden", "false");
    
@@ -57,7 +66,6 @@ CATEGORY FILTER
 ========================= */
 
 function populateCategories() {
-
 
     const categories = [  ...new Set(productCatalogue.map( product => product.category))];
              categories.forEach(
@@ -107,11 +115,6 @@ catalogueGrid.innerHTML = `
     return;
 }
 
-
-
-
-
-
     function renderAlreadyActive(product) {
         const card = document.createElement("article");
            card.className ="catalogue-card";
@@ -149,7 +152,6 @@ filteredProducts.forEach(
 ACTIVATE PRODUCT
 ========================= */
 
-
  async function activateProduct(productId) {
    const product = productCatalogue.find(item => item.id === productId);
 if (!product) {
@@ -158,9 +160,8 @@ if (!product) {
 
   openQuantityModal();
   const quantity = await activateModalQuantity();
-if (!Number.isInteger(quantity) ||quantity < 0) {
-
-    alert( "Please enter a valid quantity.");
+     if (!Number.isInteger(quantity) || quantity < 0) {
+         alert("please enter a valid quantity");
     return;
 }
 
@@ -169,6 +170,12 @@ if (!Number.isInteger(quantity) ||quantity < 0) {
     quantity,
     status:"Active"
  });
+     const activateProductReq = {
+};
+     activateProductReq.id = product.id;
+     activateProductReq.quantity = quantity;
+     activateProductReq.status = "Active";
+     console.log(activateProductReq);
     
 renderAll();
 }
@@ -307,6 +314,12 @@ function deactivateProduct(productId)
     if (index === -1) {
         return;
     }
+    const deActivateReq = {
+    }
+    deActivateReq.id = activeProducts[index].id;
+    deActivateReq.quantity = activeProducts[index].quantity;
+    deActivateReq.status = activeProducts[index].status;
+    console.log(deActivateReq);
     activeProducts.splice(index,1);
     renderAll();
 };
@@ -336,10 +349,10 @@ addProductModal.setAttribute( "aria-hidden","true");
 NEW PRODUCT SUBMISSION
 ========================= */
 
-const popDiv = document.getElementById("pop-id");
-const details = document.querySelector(".details");
-const closedButton = document.getElementById("closedAdded");
-const addedProductButton = document.getElementById("added-product");
+
+
+
+
 function openAddedProduct() {
     popDiv.style.display = "grid";
 }
